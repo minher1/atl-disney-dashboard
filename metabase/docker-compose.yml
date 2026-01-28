@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  metabase:
+    image: metabase/metabase:latest
+    container_name: disney-entitlements-metabase
+    ports:
+      - "3000:3000"
+    environment:
+      - MB_DB_TYPE=h2
+      - MB_DB_FILE=/metabase-data/metabase.db
+    volumes:
+      - metabase-data:/metabase-data
+      - ../data:/data:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+volumes:
+  metabase-data:
+    driver: local
+
+# Usage Instructions:
+# 1. Ensure Docker Desktop is running
+# 2. Open PowerShell in this directory
+# 3. Run: docker-compose up -d
+# 4. Wait 1-2 minutes for Metabase to start
+# 5. Open browser to http://localhost:3000
+# 6. Complete initial setup
+# 7. Add SQLite database connection:
+#    - Database type: SQLite
+#    - Database file: /data/entitlements.db
+# 8. Start creating dashboards!
+#
+# To stop: docker-compose down
+# To view logs: docker-compose logs -f
+
+# Made with Bob
