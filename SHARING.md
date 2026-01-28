@@ -22,7 +22,7 @@ Complete guide for sharing this project with colleagues so they can run it on th
 1. **Create a clean copy** of the project folder:
    ```powershell
    # Navigate to parent directory
-   cd "C:\Users\MikeArbrouet\Disney"
+   cd "C:\Users\YourName\Disney"
    
    # Create a ZIP file (Windows 11)
    Compress-Archive -Path "entitlements-dashboard" -DestinationPath "Disney-Dashboard-Package.zip"
@@ -123,7 +123,7 @@ Go to: http://localhost:8000
 ### Step 1: Initialize Git Repository
 
 ```powershell
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard"
+cd "C:\Users\YourName\Disney\entitlements-dashboard"
 
 # Initialize git
 git init
@@ -210,7 +210,7 @@ cd disney-dashboard
 
 ```powershell
 # Copy to network share
-Copy-Item -Path "C:\Users\MikeArbrouet\Disney\entitlements-dashboard" `
+Copy-Item -Path "C:\Users\YourName\Disney\entitlements-dashboard" `
           -Destination "\\company-server\shared\Disney-Dashboard" `
           -Recurse
 ```

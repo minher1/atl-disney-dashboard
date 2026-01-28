@@ -39,7 +39,7 @@ This guide explains how to migrate from the HTML dashboard to Metabase for more 
 If you haven't already, convert your Excel file to SQLite:
 
 ```powershell
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard\scripts"
+cd "C:\Users\YourName\Disney\entitlements-dashboard\scripts"
 python excel_to_sqlite.py
 ```
 
@@ -48,7 +48,7 @@ This creates `data/entitlements.db` with indexed tables for fast queries.
 ### Step 2: Start Metabase
 
 ```powershell
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard\metabase"
+cd "C:\Users\YourName\Disney\entitlements-dashboard\metabase"
 docker-compose up -d
 ```
 

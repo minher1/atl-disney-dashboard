@@ -9,7 +9,7 @@ Get your Disney Enterprise Entitlements Dashboard running in 5 minutes!
 Open PowerShell and run:
 
 ```powershell
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard\scripts"
+cd "C:\Users\YourName\Disney\entitlements-dashboard\scripts"
 pip install -r requirements.txt
 ```
 
@@ -22,7 +22,7 @@ python excel_to_json.py
 You should see:
 ```
 ✓ Successfully converted XXXX records to JSON
-✓ Output file: C:\Users\MikeArbrouet\Disney\entitlements-dashboard\data\entitlements.json
+✓ Output file: C:\Users\YourName\Disney\entitlements-dashboard\data\entitlements.json
 ```
 
 ### 3️⃣ Start the Dashboard
@@ -80,7 +80,7 @@ When you get a new Excel file:
 ```powershell
 # 1. Replace the Excel file (or update the path in the script)
 # 2. Run the converter again
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard\scripts"
+cd "C:\Users\YourName\Disney\entitlements-dashboard\scripts"
 python excel_to_json.py
 
 # 3. Refresh your browser
@@ -135,7 +135,7 @@ Click the **"Export Data"** button in the top-right corner to download:
 **Solution**:
 ```powershell
 # Make sure you're using Python's HTTP server
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard\dashboard"
+cd "C:\Users\YourName\Disney\entitlements-dashboard\dashboard"
 python -m http.server 8000
 ```
 

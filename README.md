@@ -59,7 +59,7 @@ entitlements-dashboard/
 Open PowerShell in the `scripts` folder:
 
 ```powershell
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard\scripts"
+cd "C:\Users\YourName\Disney\entitlements-dashboard\scripts"
 pip install -r requirements.txt
 ```
 
@@ -72,7 +72,7 @@ python excel_to_json.py
 ```
 
 This will:
-- Read your Excel file from: `C:\Users\MikeArbrouet\Desktop\Disney\Disney_Enterprise__Entitlements_by_Customer_Site_v3.xlsx`
+- Read your Excel file from: `C:\Users\YourName\Desktop\Disney\Disney_Enterprise__Entitlements_by_Customer_Site_v3.xlsx`
 - Create: `data/entitlements.json`
 - Display summary statistics
 
@@ -81,7 +81,7 @@ This will:
 **Option A: Using Python's Built-in Server (Recommended)**
 
 ```powershell
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard\dashboard"
+cd "C:\Users\YourName\Disney\entitlements-dashboard\dashboard"
 python -m http.server 8000
 ```
 
@@ -147,14 +147,14 @@ For more advanced analytics and multi-user access, you can use Metabase:
 ### Step 1: Create SQLite Database
 
 ```powershell
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard\scripts"
+cd "C:\Users\YourName\Disney\entitlements-dashboard\scripts"
 python excel_to_sqlite.py
 ```
 
 ### Step 2: Start Metabase
 
 ```powershell
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard\metabase"
+cd "C:\Users\YourName\Disney\entitlements-dashboard\metabase"
 docker-compose up -d
 ```
 

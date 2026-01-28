@@ -50,7 +50,7 @@ Keep this handy - you'll need it soon!
 Navigate to your project folder:
 
 ```powershell
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard"
+cd "C:\Users\YourName\Disney\entitlements-dashboard"
 ```
 
 ### Step 2: Initialize Git (if not already done)
@@ -394,7 +394,7 @@ git push
 ### First Time Setup
 
 ```powershell
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard"
+cd "C:\Users\YourName\Disney\entitlements-dashboard"
 git init
 git add .
 git commit -m "Initial commit"

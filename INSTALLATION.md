@@ -49,7 +49,7 @@ You should see version numbers for both.
 Navigate to the scripts folder and install required packages:
 
 ```powershell
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard\scripts"
+cd "C:\Users\YourName\Disney\entitlements-dashboard\scripts"
 pip install -r requirements.txt
 ```
 
@@ -74,12 +74,12 @@ python excel_to_json.py
 Disney Enterprise Entitlements - Excel to JSON Converter
 ============================================================
 
-Reading Excel file: C:\Users\MikeArbrouet\Desktop\Disney\Disney_Enterprise__Entitlements_by_Customer_Site_v3.xlsx
+Reading Excel file: C:\Users\YourName\Desktop\Disney\Disney_Enterprise__Entitlements_by_Customer_Site_v3.xlsx
 Successfully read XXXX rows
 Columns found: XX
-Writing JSON to: C:\Users\MikeArbrouet\Disney\entitlements-dashboard\data\entitlements.json
+Writing JSON to: C:\Users\YourName\Disney\entitlements-dashboard\data\entitlements.json
 ✓ Successfully converted XXXX records to JSON
-✓ Output file: C:\Users\MikeArbrouet\Disney\entitlements-dashboard\data\entitlements.json
+✓ Output file: C:\Users\YourName\Disney\entitlements-dashboard\data\entitlements.json
 
 === Summary Statistics ===
 Unique Brands: XX
@@ -287,7 +287,7 @@ Create a file named `Start-Dashboard.bat` on your desktop:
 
 ```batch
 @echo off
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard\dashboard"
+cd "C:\Users\YourName\Disney\entitlements-dashboard\dashboard"
 start http://localhost:8000
 python -m http.server 8000
 ```
@@ -300,7 +300,7 @@ When you receive a new Excel file:
 
 ```powershell
 # 1. Navigate to scripts folder
-cd "C:\Users\MikeArbrouet\Disney\entitlements-dashboard\scripts"
+cd "C:\Users\YourName\Disney\entitlements-dashboard\scripts"
 
 # 2. Run conversion
 python excel_to_json.py
