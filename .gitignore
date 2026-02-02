@@ -5,6 +5,10 @@
 *revenue*
 *pricing*
 
+# Entitlements Data - Contains actual client data
+data/entitlements.json
+data/*.json
+
 # Python
 __pycache__/
 *.py[cod]
