@@ -1,0 +1,897 @@
+/* Enterprise Architecture Matrices - QBR Presentation */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 11px;
+}
+
+.matrices-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+/* Header */
+.matrices-header {
+    background: white;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-section h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0f62fe;
+}
+
+.disney-logo {
+    height: 40px;
+    width: auto;
+}
+
+/* Legend */
+.legend {
+    display: flex !important;
+    gap: 15px;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    justify-content: center;
+    visibility: visible !important;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 10px 30px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 2px solid;
+    min-width: 160px;
+    justify-content: center;
+    text-align: center;
+}
+
+.legend-item:nth-child(1) {
+    background-color: #a8d5ff;
+    border-color: #0f62fe;
+    color: #333;
+}
+
+.legend-item:nth-child(2) {
+    background-color: #a7f0ba;
+    border-color: #24a148;
+    color: #333;
+}
+
+.legend-item:nth-child(3) {
+    background-color: #fdd13a;
+    border-color: #f1c21b;
+    color: #333;
+}
+
+.legend-item:nth-child(4) {
+    background-color: #ff8389;
+    border-color: #da1e28;
+    color: #333;
+}
+
+.legend-color {
+    display: none;
+}
+
+/* Matrix Toggle */
+.matrix-toggle {
+    display: flex;
+    gap: 10px;
+}
+
+.toggle-btn {
+    padding: 10px 20px;
+    border: 2px solid #0f62fe;
+    background: white;
+    color: #0f62fe;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.toggle-btn:hover {
+    background: #e8f0ff;
+}
+
+.toggle-btn.active {
+    background: #0f62fe;
+    color: white;
+}
+
+/* Matrix Views */
+.matrix-view {
+    display: none;
+}
+
+.matrix-view.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Matrix Grid */
+.matrix-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr 200px;
+    gap: 8px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Matrix 1 Landscape Layout - PowerPoint Optimized */
+#matrix1 .matrix-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 12px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#matrix1 .sidebar-left,
+#matrix1 .sidebar-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#matrix1 .main-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+#matrix1 .layer {
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+}
+
+/* Sidebars */
+.sidebar-left,
+.sidebar-right {
+    display: flex;
+/* Matrix 1 Colorful Layer Styling */
+#matrix1 .layer {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+}
+
+#matrix1 .layer:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#matrix1 .layer-header {
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#matrix1 .layer-subtitle {
+    background: #f8f9fa;
+    color: #495057;
+    font-size: 10px;
+    padding: 6px 12px;
+    text-align: center;
+    font-style: italic;
+    border-bottom: 2px solid #e9ecef;
+}
+
+#matrix1 .layer-content {
+    background: #ffffff;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+#matrix1 .tech-box {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border: 2px solid #dee2e6;
+    border-radius: 4px;
+    padding: 8px 6px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    color: #212529;
+    transition: all 0.2s;
+    min-height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#matrix1 .tech-box:hover {
+    transform: scale(1.05);
+    border-color: #0f62fe;
+    box-shadow: 0 4px 12px rgba(15, 98, 254, 0.2);
+}
+
+/* Vibrant Color Scheme for Matrix 1 Layers */
+#matrix1 .layer-header.security {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+#matrix1 .layer-header.applications {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+#matrix1 .layer-header.ai {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+#matrix1 .layer-header.data {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+#matrix1 .layer-header.openshift {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+#matrix1 .layer-header.infrastructure {
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+}
+
+#matrix1 .layer-header.automation {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #333;
+}
+
+#matrix1 .layer-header.network {
+    background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);
+}
+
+/* Group Labels for AI & Analytics */
+#matrix1 .group-label {
+    background: linear-gradient(90deg, #e3f2fd 0%, #bbdefb 100%);
+    color: #1565c0;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 8px;
+    border-left: 3px solid #1976d2;
+    border-radius: 3px;
+    margin-top: 6px;
+    text-align: center;
+}
+
+#matrix1 .group-label:first-child {
+    margin-top: 0;
+}
+
+/* Compact Sidebar Styling for Matrix 1 */
+#matrix1 .sidebar-left .layer-header,
+#matrix1 .sidebar-right .layer-header {
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 6px 6px 0 0;
+}
+
+#matrix1 .sidebar-left .tech-box,
+#matrix1 .sidebar-right .tech-box {
+    min-height: 40px;
+/* Competitive Landscape Section */
+.competitive-section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.competitive-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #0f62fe;
+}
+
+.competitive-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.competitive-column {
+    background: #f8f9fa;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.competitive-header {
+    background: linear-gradient(135deg, #0f62fe 0%, #0353e9 100%);
+    color: white;
+    padding: 12px 10px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.competitive-list {
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.competitive-item {
+    background: white;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #495057;
+    border-left: 3px solid #dee2e6;
+    transition: all 0.2s;
+}
+
+.competitive-item:hover {
+    border-left-color: #0f62fe;
+    background: #e8f0ff;
+    transform: translateX(3px);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 1200px) {
+    .competitive-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .competitive-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+    font-size: 10px;
+}
+
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-title {
+    background: #0f62fe;
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 11px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.sidebar-section {
+    border: 2px solid;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.sidebar-section.security {
+    border-color: #0f62fe;
+}
+
+.sidebar-section.identity {
+    border-color: #8a3ffc;
+}
+
+.sidebar-section.automation {
+    border-color: #8a3ffc;
+}
+
+.sidebar-section.network {
+    border-color: #8a3ffc;
+}
+
+.section-header {
+    font-weight: bold;
+    font-size: 10px;
+    margin-bottom: 6px;
+    padding: 4px;
+    background: #f4f4f4;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.tech-item {
+    padding: 5px 6px;
+    margin: 3px 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 9px;
+    text-align: center;
+}
+
+.tech-item.highlight {
+    background: #e8f0ff;
+    border-color: #0f62fe;
+    font-weight: 600;
+}
+
+.tech-item.no-interest {
+    background: #ffe0e0;
+    border-color: #da1e28;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Layer Rows */
+.layer-row {
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.layer-row.applications {
+    border-color: #ff6b6b;
+}
+
+.layer-row.ai-assistants {
+    border-color: #0f62fe;
+}
+
+.layer-row.data-layer {
+    border-color: #0f62fe;
+}
+
+.layer-row.app-dev {
+    border-color: #8a3ffc;
+}
+
+.layer-row.openshift {
+    border-color: #cc0000;
+    background: #cc0000;
+}
+
+.layer-row.infrastructure {
+    border-color: #525252;
+}
+
+.layer-row.services {
+    display: flex;
+    gap: 8px;
+    border: none;
+}
+
+.layer-header {
+    background: #0f62fe;
+    color: white;
+    padding: 6px 10px;
+    font-weight: bold;
+    font-size: 11px;
+    text-align: center;
+.layer-subtitle {
+    font-size: 9px;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    padding: 4px 8px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 8px;
+}
+
+.group-label {
+    font-size: 9px;
+    font-weight: 600;
+    color: #0f62fe;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 8px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    background: #f0f4ff;
+    border-left: 3px solid #0f62fe;
+    border-radius: 2px;
+}
+
+.group-label:first-child {
+    margin-top: 0;
+}
+
+}
+
+.layer-header.redhat {
+    background: #cc0000;
+    padding: 12px;
+    font-size: 14px;
+}
+
+.layer-row.applications .layer-header {
+    background: #ff6b6b;
+}
+
+.layer-row.ai-assistants .layer-header {
+    background: #0f62fe;
+}
+
+.layer-row.app-dev .layer-header {
+    background: #8a3ffc;
+}
+
+.layer-row.infrastructure .layer-header {
+/* Layer-specific header colors */
+.layer-header.security {
+    background: #0f62fe;
+}
+
+.layer-header.applications {
+    background: #ff6b6b;
+}
+
+.layer-header.ai {
+    background: #0f62fe;
+}
+
+.layer-header.data {
+    background: #0f62fe;
+}
+
+.layer-header.openshift {
+    background: #cc0000;
+}
+
+.layer-header.infrastructure {
+    background: #525252;
+}
+
+.layer-header.automation {
+    background: #8a3ffc;
+}
+
+.layer-header.network {
+    background: #8a3ffc;
+}
+
+    background: #525252;
+}
+
+/* Tech Grid */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 4px;
+    padding: 8px;
+    background: #fafafa;
+}
+
+.tech-box {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 8px 6px;
+    text-align: center;
+    font-size: 9px;
+    font-weight: 500;
+    min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.tech-box:hover {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transform: translateY(-1px);
+}
+
+.tech-box.highlight {
+    background: #e8f0ff;
+    border-color: #0f62fe;
+    border-width: 2px;
+    font-weight: 700;
+}
+
+.tech-box.opportunity {
+    background: #e5f5ea;
+    border-color: #24a148;
+    border-width: 2px;
+}
+
+.tech-box.explore {
+    background: #fff8e1;
+    border-color: #f1c21b;
+    border-width: 2px;
+}
+
+.tech-box.no-interest {
+    background: #ffe0e0;
+    border-color: #da1e28;
+    border-width: 2px;
+}
+
+.tech-box .sub {
+    display: block;
+    font-size: 8px;
+    color: #666;
+    margin-top: 3px;
+    font-weight: normal;
+}
+
+/* Sub Layers */
+.layer-row.data-layer,
+.layer-row.app-dev,
+.layer-row.infrastructure {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-layer {
+    border-bottom: 1px solid #ddd;
+}
+
+.sub-layer:last-child {
+    border-bottom: none;
+}
+
+.sub-layer .layer-header {
+    font-size: 10px;
+    padding: 5px 8px;
+}
+
+.sub-layer .tech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    padding: 6px;
+}
+
+/* Services */
+.service-box {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 4px;
+    color: white;
+}
+
+.service-box.tls {
+    background: #0f62fe;
+}
+
+.service-box.el {
+    background: #24a148;
+}
+
+/* Coming Soon */
+.coming-soon {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.coming-soon h2 {
+    font-size: 24px;
+    color: #0f62fe;
+    margin-bottom: 15px;
+}
+
+.coming-soon p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+    .matrix-grid {
+        grid-template-columns: 160px 1fr 180px;
+    }
+    
+    .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+    }
+}
+
+@media print {
+    body {
+        background: white;
+    }
+    
+    .matrices-header {
+        box-shadow: none;
+    }
+    
+    .matrix-toggle {
+        display: none;
+    }
+    
+    .matrix-grid {
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Made with Bob */
+/* Updated 2026-01-31 12:23:23 */
+
+/* PowerPoint-Optimized Styles for Matrix 1 */
+@media print {
+    #matrix1 {
+        page-break-inside: avoid;
+        max-width: 100%;
+    }
+    
+    #matrix1 .matrix-grid {
+        transform: scale(0.95);
+        transform-origin: top center;
+    }
+    
+    #matrix1 .layer {
+        page-break-inside: avoid;
+    }
+    
+    .toggle-buttons {
+        display: none;
+    }
+    
+    header {
+        padding: 10px 20px;
+    }
+}
+
+/* Compact Header for Matrix 1 */
+#matrix1 + header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+
+/* Matrix 2 Specific Styling */
+#matrix2 .tech-box {
+    background: white;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #212529;
+    border-left: 3px solid #dee2e6;
+    min-height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+#matrix2 .tech-box:hover {
+    transform: translateX(3px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Hyperlinks in Matrix 2 tech boxes */
+#matrix2 .tech-box a {
+    color: #0f62fe;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+#matrix2 .tech-box a:hover {
+    color: #0353e9;
+    text-decoration: underline;
+}
+
+#matrix2 .value-statement {
+    font-size: 10px;
+    color: #6c757d;
+    margin-top: 4px;
+    font-style: italic;
+    line-height: 1.3;
+}
+
+/* Status Color Coding for Matrix 2 - Matching Legend Colors */
+#matrix2 .status-installed,
+.status-installed {
+    border-left: 4px solid #0f62fe;
+    background: linear-gradient(135deg, #d0e2ff 0%, #e8f0ff 100%);
+}
+
+#matrix2 .status-opportunity,
+.status-opportunity {
+    border-left: 4px solid #24a148;
+    background: linear-gradient(135deg, #a7f0ba 0%, #d2f4da 100%);
+}
+
+#matrix2 .status-explore,
+.status-explore {
+    border-left: 4px solid #f1c21b;
+    background: linear-gradient(135deg, #fdd13a 0%, #fef7e0 100%);
+}
+
+#matrix2 .status-at-risk,
+.status-at-risk {
+    border-left: 4px solid #da1e28;
+    background: linear-gradient(135deg, #ffb3b8 0%, #ffd7d9 100%);
+}
+
+/* Matrix 2 Layer Headers */
+#matrix2 .layer-header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 6px 6px 0 0;
+}
+
+/* Compact layout for Matrix 2 */
+#matrix2 .matrix-grid.compact {
+    gap: 12px;
+}
+
+#matrix2 .matrix-grid.compact .layer {
+    min-height: auto;
+}
+
+#matrix2 .matrix-grid.compact .layer-content {
+    gap: 8px;
+    padding: 10px;
+}
+
+#matrix2 .sidebar-left,
+#matrix2 .sidebar-right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

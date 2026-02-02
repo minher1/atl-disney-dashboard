@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney IBM Resources Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --disney-blue: #0063e5;
+            --ibm-blue: #0f62fe;
+            --dark-bg: #1e1e1e;
+            --card-bg: #2d2d2d;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--disney-blue), var(--ibm-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--ibm-blue);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        
+        .resource-icon {
+            font-size: 2rem;
+            color: var(--ibm-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .resource-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resource-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-link {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--ibm-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .resource-link:hover {
+            background: var(--disney-blue);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .category-header {
+            background: linear-gradient(135deg, var(--disney-blue), var(--ibm-blue));
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+        
+        .badge-new {
+            background: #28a745;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+            color: #666;
+        }
+        
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: white;
+            color: var(--ibm-blue);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .back-button:hover {
+            background: var(--ibm-blue);
+            color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="login.html" class="back-button">
+        <i class="bi bi-arrow-left"></i> Back to Login
+    </a>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="hero-title">
+                    <i class="bi bi-collection"></i> Disney IBM Resources Hub
+                </h1>
+                <p class="lead text-muted">Comprehensive collection of matrices, dashboards, and analytical tools</p>
+                <p class="text-muted"><small>Last Updated: February 2026 | Internal Use Only</small></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container pb-5">
+        
+        <!-- Enterprise Architecture Matrices -->
+        <div class="category-header">
+            <i class="bi bi-diagram-3"></i> Enterprise Architecture Matrices
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-grid-3x3-gap"></i>
+                    </div>
+                    <div class="resource-title">
+                        Disney Enterprise Landscape Matrix
+                        <span class="badge-new">UPDATED</span>
+                    </div>
+                    <div class="resource-description">
+                        Comprehensive view of Disney's IBM technology landscape with actual installed base data. Color-coded by deployment status.
+                    </div>
+                    <a href="matrices/matrix1-disney-enterprise-landscape.html" class="resource-link">
+                        <i class="bi bi-box-arrow-up-right"></i> View Matrix
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-diagram-2"></i>
+                    </div>
+                    <div class="resource-title">
+                        Detailed Architecture Matrix (Option A)
+                    </div>
+                    <div class="resource-description">
+                        Detailed breakdown of IBM technologies across all architectural layers with granular categorization.
+                    </div>
+                    <a href="matrices/matrix2-option-a-detailed.html" class="resource-link">
+                        <i class="bi bi-box-arrow-up-right"></i> View Matrix
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-layout-text-window"></i>
+                    </div>
+                    <div class="resource-title">
+                        Simplified Architecture Matrix (Option B)
+                    </div>
+                    <div class="resource-description">
+                        Streamlined view focusing on key technology categories and strategic initiatives.
+                    </div>
+                    <a href="matrices/matrix2-option-b-simplified.html" class="resource-link">
+                        <i class="bi bi-box-arrow-up-right"></i> View Matrix
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-layers"></i>
+                    </div>
+                    <div class="resource-title">
+                        Enterprise Architecture Matrices Hub
+                    </div>
+                    <div class="resource-description">
+                        Central hub for all architecture matrices with comparison views and navigation tools.
+                    </div>
+                    <a href="matrices/enterprise-architecture-matrices.html" class="resource-link">
+                        <i class="bi bi-box-arrow-up-right"></i> View Hub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Dashboards -->
+        <div class="category-header">
+            <i class="bi bi-speedometer2"></i> Interactive Dashboards
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-bar-chart-line"></i>
+                    </div>
+                    <div class="resource-title">
+                        Entitlements Dashboard
+                        <span class="badge-new">NEW</span>
+                    </div>
+                    <div class="resource-description">
+                        Interactive dashboard for viewing and analyzing Disney IBM entitlements data with filtering and export capabilities.
+                    </div>
+                    <a href="dashboard/index.html" class="resource-link">
+                        <i class="bi bi-box-arrow-up-right"></i> Open Dashboard
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-graph-up"></i>
+                    </div>
+                    <div class="resource-title">
+                        CSE Dashboard
+                    </div>
+                    <div class="resource-description">
+                        Client Success Executive dashboard with key metrics, trends, and performance indicators.
+                    </div>
+                    <a href="cse-dashboard/index-cse.html" class="resource-link">
+                        <i class="bi bi-box-arrow-up-right"></i> Open Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analysis Tools -->
+        <div class="category-header">
+            <i class="bi bi-tools"></i> Analysis & Documentation
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+                    <div class="resource-title">
+                        Technology Matrix Guide
+                    </div>
+                    <div class="resource-description">
+                        Comprehensive guide explaining the technology matrices, color coding, and how to interpret the data.
+                    </div>
+                    <a href="docs/CAPABILITY-MAP-GUIDE.md" class="resource-link">
+                        <i class="bi bi-book"></i> Read Guide
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-file-earmark-pdf"></i>
+                    </div>
+                    <div class="resource-title">
+                        Enhanced Technology Matrix (PDF)
+                        <span class="badge-new">UPDATED</span>
+                    </div>
+                    <div class="resource-description">
+                        PowerPoint-ready PDF version of the enhanced technology matrix with actual Disney entitlements.
+                    </div>
+                    <a href="matrices/ibm-technology-matrix-enhanced.pdf" class="resource-link" download>
+                        <i class="bi bi-download"></i> Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Access -->
+        <div class="category-header">
+            <i class="bi bi-lightning"></i> Quick Access
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-house-door"></i>
+                    </div>
+                    <div class="resource-title">
+                        Main Dashboard
+                    </div>
+                    <a href="login.html" class="resource-link">
+                        <i class="bi bi-arrow-right"></i> Go
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-github"></i>
+                    </div>
+                    <div class="resource-title">
+                        GitHub Repository
+                    </div>
+                    <a href="https://github.com/minher1/atl-disney-dashboard" class="resource-link" target="_blank">
+                        <i class="bi bi-box-arrow-up-right"></i> Open
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-question-circle"></i>
+                    </div>
+                    <div class="resource-title">
+                        Help & Documentation
+                    </div>
+                    <a href="README.md" class="resource-link">
+                        <i class="bi bi-book"></i> Read
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p><strong>Disney IBM Resources Hub</strong></p>
+            <p class="small">
+                <i class="bi bi-shield-lock"></i> Internal Use Only | Password Protected | Private Repository
+            </p>
+            <p class="small text-muted">
+                For questions or access issues, contact Mike Arbrouet
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="dashboard/auth-check.js"></script>
+</body>
+</html>
