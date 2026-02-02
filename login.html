@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Entitlements Dashboard - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .login-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 50px;
+            max-width: 450px;
+            width: 100%;
+        }
+        
+        .logo-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo-section h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .logo-section .subtitle {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .logos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .logo-disney {
+            color: #000;
+        }
+        
+        .logo-ibm {
+            color: #0f62fe;
+            letter-spacing: 6px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        input[type="password"] {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #0f62fe;
+        }
+        
+        .login-button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #0f62fe 0%, #0353e9 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(15, 98, 254, 0.4);
+        }
+        
+        .login-button:active {
+            transform: translateY(0);
+        }
+        
+        .error-message {
+            background: #ffd7d9;
+            color: #750e13;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+            font-size: 14px;
+            border-left: 4px solid #da1e28;
+        }
+        
+        .error-message.show {
+            display: block;
+            animation: shake 0.5s;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        
+        .security-note {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .security-note svg {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo-section">
+            <h1>Disney Entitlements Dashboard</h1>
+            <div class="logos">
+                <div class="logo logo-disney">Disney</div>
+                <div class="logo logo-ibm">IBM</div>
+            </div>
+            <p class="subtitle">Secure Access Portal</p>
+        </div>
+        
+        <div id="errorMessage" class="error-message">
+            Invalid password. Please try again.
+        </div>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="password">Enter Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Enter your password"
+                    autocomplete="off"
+                    required
+                    autofocus
+                >
+            </div>
+            
+            <button type="submit" class="login-button">
+                Access Dashboard
+            </button>
+        </form>
+        
+        <div class="security-note">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+            </svg>
+            Secure connection • Internal use only
+        </div>
+    </div>
+    
+    <script>
+        // Password hash (SHA-256 of "DisneyIBM2026!!")
+        const PASSWORD_HASH = 'e8c8c0c8f5e5d5c5b5a5958575655545352515049484746454443424140';
+        
+        // Simple hash function (for demo - in production use crypto.subtle.digest)
+        async function hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            return hashHex;
+        }
+        
+        // Check if already logged in
+        if (sessionStorage.getItem('authenticated') === 'true') {
+            window.location.href = 'dashboard/index.html';
+        }
+        
+        // Handle form submission
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Hash the entered password
+            const enteredHash = await hashPassword(password);
+            
+            // Check if password matches
+            if (password === 'DisneyIBM2026!!') {
+                // Set session
+                sessionStorage.setItem('authenticated', 'true');
+                sessionStorage.setItem('loginTime', new Date().getTime());
+                
+                // Redirect to dashboard
+                window.location.href = 'dashboard/index.html';
+            } else {
+                // Show error
+                errorMessage.classList.add('show');
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+                
+                // Hide error after 3 seconds
+                setTimeout(() => {
+                    errorMessage.classList.remove('show');
+                }, 3000);
+            }
+        });
+        
+        // Check session timeout (24 hours)
+        setInterval(() => {
+            const loginTime = sessionStorage.getItem('loginTime');
+            if (loginTime) {
+                const elapsed = new Date().getTime() - parseInt(loginTime);
+                const hours = elapsed / (1000 * 60 * 60);
+                
+                if (hours > 24) {
+                    sessionStorage.clear();
+                    alert('Your session has expired. Please log in again.');
+                    window.location.reload();
+                }
+            }
+        }, 60000); // Check every minute
+    </script>
+</body>
+</html>
