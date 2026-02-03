@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; url=../resources.html">
+    <title>Redirecting...</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .redirect-message {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        .redirect-message h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .redirect-message p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        .redirect-link {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .redirect-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-message">
+        <h1>🔄 Redirecting...</h1>
+        <p>The entitlements dashboard has been moved for security reasons.</p>
+        <p>You will be redirected to the resources hub automatically.</p>
+        <a href="../resources.html" class="redirect-link">Click here if not redirected</a>
+    </div>
+    <script>
+        // Redirect after 2 seconds
+        setTimeout(function() {
+            window.location.href = '../resources.html';
+        }, 2000);
+    </script>
+</body>
+</html>
