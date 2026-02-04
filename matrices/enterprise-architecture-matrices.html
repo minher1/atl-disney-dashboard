@@ -92,11 +92,19 @@
         .at-risk { background: #ffd7d9; border: 2px solid #da1e28; }
         .neutral { background: #f4f4f4; border: 2px solid #8d8d8d; }
         
+        .matrix-container {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: visible;
+            padding-bottom: 20px;
+        }
+        
         .matrix {
             display: grid;
             grid-template-columns: 180px repeat(7, 1fr) 180px;
             gap: 6px;
             font-size: 7.5px;
+            min-width: 1600px;
         }
         
         .category {
@@ -176,8 +184,9 @@
         </div>
     </div>
     
-    <div class="matrix">
-        <!-- Security Column -->
+    <div class="matrix-container">
+        <div class="matrix">
+            <!-- Security Column -->
         <div>
             <div class="category">Security</div>
             <div class="product neutral">Guardium Data Encryption</div>
@@ -446,6 +455,7 @@
             </div>
         </div>
     </div>
+    </div> <!-- Close matrix-container -->
     
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px;">
         <div style="background: linear-gradient(135deg, #0f62fe 0%, #0353e9 100%); color: white; padding: 6px; text-align: center; font-weight: 600; border-radius: 3px; font-size: 10px;">
