@@ -19,10 +19,19 @@
         body {
             font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
             background: white;
-            width: 16in;
-            height: 9in;
-            padding: 0.25in;
-            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+            padding: 20px;
+            overflow-x: auto;
+        }
+        
+        @media print {
+            body {
+                width: 16in;
+                height: 9in;
+                padding: 0.25in;
+                overflow: hidden;
+            }
         }
         
         .header {
