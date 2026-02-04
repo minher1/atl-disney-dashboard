@@ -53,17 +53,19 @@ body {
 }
 
 /* Legend */
-.legend {
+.legend,
+.legend-top {
     display: flex !important;
     gap: 15px;
     align-items: center;
-    padding: 15px 20px;
+    padding: 20px 30px;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
     justify-content: center;
     visibility: visible !important;
+    border: 2px solid #0f62fe;
 }
 
 .legend-item {
@@ -837,29 +839,33 @@ body {
     line-height: 1.3;
 }
 
-/* Status Color Coding for Matrix 2 - Matching Legend Colors */
+/* Status Color Coding for Matrix 2 - EXACTLY Matching Legend Colors */
 #matrix2 .status-installed,
 .status-installed {
-    border-left: 4px solid #0f62fe;
-    background: linear-gradient(135deg, #d0e2ff 0%, #e8f0ff 100%);
+    border: 3px solid #0f62fe;
+    background-color: #a8d5ff !important;
+    background: #a8d5ff !important;
 }
 
 #matrix2 .status-opportunity,
 .status-opportunity {
-    border-left: 4px solid #24a148;
-    background: linear-gradient(135deg, #a7f0ba 0%, #d2f4da 100%);
+    border: 3px solid #24a148;
+    background-color: #a7f0ba !important;
+    background: #a7f0ba !important;
 }
 
 #matrix2 .status-explore,
 .status-explore {
-    border-left: 4px solid #f1c21b;
-    background: linear-gradient(135deg, #fdd13a 0%, #fef7e0 100%);
+    border: 3px solid #f1c21b;
+    background-color: #fdd13a !important;
+    background: #fdd13a !important;
 }
 
 #matrix2 .status-at-risk,
 .status-at-risk {
-    border-left: 4px solid #da1e28;
-    background: linear-gradient(135deg, #ffb3b8 0%, #ffd7d9 100%);
+    border: 3px solid #da1e28;
+    background-color: #ff8389 !important;
+    background: #ff8389 !important;
 }
 
 /* Matrix 2 Layer Headers */
