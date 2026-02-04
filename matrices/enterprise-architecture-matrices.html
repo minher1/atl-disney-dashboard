@@ -3,321 +3,448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disney Enterprise Architecture Matrices - QBR</title>
-    <link rel="stylesheet" href="css/enterprise-matrices.css">
+    <title>IBM Technology Matrix - Disney Enhanced</title>
+    <style>
+        @page {
+            size: 16in 9in;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+            background: white;
+            width: 16in;
+            height: 9in;
+            padding: 0.25in;
+            overflow: hidden;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.15in;
+        }
+        
+        .title {
+            font-size: 26px;
+            font-weight: 600;
+            color: #000;
+        }
+        
+        .logos {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .logo-ibm {
+            color: #0f62fe;
+            letter-spacing: 5px;
+        }
+        
+        .legend {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 0.12in;
+            justify-content: center;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 500;
+        }
+        
+        .legend-box {
+            width: 18px;
+            height: 18px;
+            border-radius: 2px;
+        }
+        
+        .installed { background: #d0e2ff; border: 2px solid #0f62fe; }
+        .opportunity { background: #d2f4ea; border: 2px solid #24a148; }
+        .explore { background: #fcf4d6; border: 2px solid #f1c21b; }
+        .at-risk { background: #ffd7d9; border: 2px solid #da1e28; }
+        .neutral { background: #f4f4f4; border: 2px solid #8d8d8d; }
+        
+        .matrix {
+            display: grid;
+            grid-template-columns: 180px repeat(7, 1fr) 180px;
+            gap: 6px;
+            font-size: 7.5px;
+        }
+        
+        .category {
+            background: linear-gradient(135deg, #0f62fe 0%, #0353e9 100%);
+            color: white;
+            padding: 6px;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 3px;
+            font-size: 9px;
+        }
+        
+        .category.purple {
+            background: linear-gradient(135deg, #8a3ffc 0%, #6929c4 100%);
+        }
+        
+        .category.red {
+            background: linear-gradient(135deg, #da1e28 0%, #a2191f 100%);
+        }
+        
+        .category.dark {
+            background: linear-gradient(135deg, #393939 0%, #262626 100%);
+        }
+        
+        .product {
+            padding: 4px 5px;
+            border-radius: 2px;
+            text-align: center;
+            font-size: 7px;
+            line-height: 1.2;
+            min-height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid;
+        }
+        
+        .product.installed { background: #d0e2ff; border-color: #0f62fe; color: #001d6c; font-weight: 600; }
+        .product.opportunity { background: #d2f4ea; border-color: #24a148; color: #0e6027; font-weight: 500; }
+        .product.explore { background: #fcf4d6; border-color: #f1c21b; color: #684e00; }
+        .product.at-risk { background: #ffd7d9; border-color: #da1e28; color: #750e13; }
+        .product.neutral { background: #f4f4f4; border-color: #c6c6c6; color: #525252; }
+        
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="header-content">
-                <h1>Disney Enterprise Architecture</h1>
-                <div class="toggle-buttons">
-                    <button id="matrix1Btn" class="toggle-btn active">Matrix 1: Technology Landscape</button>
-                    <button id="matrix2Btn" class="toggle-btn">Matrix 2: IBM Value & Opportunity</button>
-                </div>
-            </div>
-        </header>
-
-        <!-- Matrix 1: Disney Enterprise Technology Landscape (Current State) -->
-        <div id="matrix1" class="matrix-view active">
-            <!-- Competitive Landscape Section Removed -->
-            
-            <div class="matrix-grid">
-                <!-- Left Sidebar: Security & IAM -->
-                <div class="sidebar-left">
-                    <div class="layer-header security">Security & IAM</div>
-                    <div class="layer-subtitle">Cross-Cutting Controls (Identity, Data, Network, Observability)</div>
-                    <div class="tech-box">CyberArk</div>
-                    <div class="tech-box">Okta</div>
-                    <div class="tech-box">Splunk</div>
-                    <div class="tech-box">Qualys</div>
-                    <div class="tech-box">Palo Alto Networks</div>
-                    <div class="tech-box">BigID</div>
-                    <div class="tech-box">Immuta</div>
-                    <div class="tech-box">OneTrust</div>
-                </div>
-
-                <!-- Main Content Area -->
-                <div class="main-content">
-                    <!-- Applications Layer -->
-                    <div class="layer">
-                        <div class="layer-header applications">Applications</div>
-                        <div class="layer-subtitle">Core Business & Digital Platforms</div>
-                        <div class="layer-content">
-                            <div class="tech-box">SAP ERP</div>
-                            <div class="tech-box">Workday</div>
-                            <div class="tech-box">ServiceNow</div>
-                            <div class="tech-box">Salesforce</div>
-                            <div class="tech-box">Adobe Experience Cloud</div>
-                            <div class="tech-box">Oracle</div>
-                        </div>
-                    </div>
-
-                    <!-- AI & Analytics Layer -->
-                    <div class="layer">
-                        <div class="layer-header ai">AI & Analytics</div>
-                        <div class="layer-content">
-                            <div class="group-label">AI & GenAI Platforms</div>
-                            <div class="tech-box">OpenAI</div>
-                            <div class="tech-box">DataRobot</div>
-                            <div class="tech-box">Google Cloud AI</div>
-                            <div class="tech-box">Azure AI</div>
-                            <div class="tech-box">AWS AI/ML</div>
-                            
-                            <div class="group-label">Data Platforms</div>
-                            <div class="tech-box">Snowflake</div>
-                            <div class="tech-box">Databricks</div>
-                            
-                            <div class="group-label">Analytics & BI</div>
-                            <div class="tech-box">Tableau</div>
-                            <div class="tech-box">Power BI</div>
-                            <div class="tech-box">Looker</div>
-                        </div>
-                    </div>
-
-                    <!-- Data & Integration Layer -->
-                    <div class="layer">
-                        <div class="layer-header data">Data & Integration</div>
-                        <div class="layer-content">
-                            <div class="tech-box">MuleSoft</div>
-                            <div class="tech-box">Informatica</div>
-                            <div class="tech-box">Kafka</div>
-                            <div class="tech-box">Talend</div>
-                            <div class="tech-box">Fivetran</div>
-                            <div class="tech-box">Collibra</div>
-                            <div class="tech-box">Alation</div>
-                        </div>
-                    </div>
-
-                    <!-- Platform & Container Layer -->
-                    <div class="layer">
-                        <div class="layer-header openshift">Platform & Containers</div>
-                        <div class="layer-content">
-                            <div class="tech-box">Kubernetes</div>
-                            <div class="tech-box">Docker</div>
-                            <div class="tech-box">Rancher</div>
-                            <div class="tech-box">VMware Tanzu</div>
-                            <div class="tech-box">Cloud Foundry</div>
-                            <div class="tech-box">AWS EKS</div>
-                            <div class="tech-box">Azure AKS</div>
-                        </div>
-                    </div>
-
-                    <!-- Infrastructure Layer -->
-                    <div class="layer">
-                        <div class="layer-header infrastructure">Infrastructure</div>
-                        <div class="layer-content">
-                            <div class="tech-box">AWS</div>
-                            <div class="tech-box">Microsoft Azure</div>
-                            <div class="tech-box">Google Cloud</div>
-                            <div class="tech-box">VMware vSphere</div>
-                            <div class="tech-box">Dell EMC Storage</div>
-                            <div class="tech-box">NetApp</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Sidebar: Automation & Network -->
-                <div class="sidebar-right">
-                    <div class="layer-header automation">Automation</div>
-                    <div class="layer-subtitle">Platform Engineering & CI/CD</div>
-                    <div class="tech-box">Ansible</div>
-                    <div class="tech-box">Terraform</div>
-                    <div class="tech-box">Jenkins</div>
-                    <div class="tech-box">GitLab CI/CD</div>
-                    <div class="tech-box">GitHub Actions</div>
-                    <div class="tech-box">ArgoCD</div>
-                    
-                    <div class="layer-header network" style="margin-top: 20px;">Network</div>
-                    <div class="layer-subtitle">Connectivity, Edge, and Traffic Control</div>
-                    <div class="tech-box">Cisco</div>
-                    <div class="tech-box">F5</div>
-                    <div class="tech-box">Akamai</div>
-                    <div class="tech-box">Cloudflare</div>
-                </div>
-            </div>
+    <div class="header">
+        <div class="title">IBM Technology @ Disney</div>
+        <div class="logos">
+            <div class="logo">Disney</div>
+            <div class="logo logo-ibm">IBM</div>
         </div>
-
-        <!-- Matrix 2: IBM Installed Base, Value & Opportunity Overlay -->
-        <div id="matrix2" class="matrix-view">
-            <!-- Legend at TOP -->
-            <div class="legend-top">
-                <div class="legend-item status-installed">🔵 Installed Base</div>
-                <div class="legend-item status-opportunity">🟢 Opportunity</div>
-                <div class="legend-item status-explore">🟡 Explore</div>
-                <div class="legend-item status-at-risk">🔴 At Risk</div>
-            </div>
-
-            <div class="matrix-grid compact">
-                <!-- Left Sidebar: Security & IAM -->
-                <div class="sidebar-left">
-                    <div class="layer-header security">Security & IAM</div>
-                    <div class="tech-box status-installed">
-                        <a href="https://www.ibm.com/products/guardium-data-protection" target="_blank"><strong>IBM Guardium</strong></a>
-                        <p class="value-statement">Protecting 500+ databases</p>
-                    </div>
-                    <div class="tech-box status-opportunity">
-                        <a href="https://www.ibm.com/products/verify-identity" target="_blank"><strong>IBM Verify</strong></a>
-                        <p class="value-statement">Cloud-native IAM modernization</p>
-                    </div>
-                    <div class="tech-box status-explore">
-                        <a href="https://www.ibm.com/products/qradar-siem" target="_blank"><strong>IBM QRadar</strong></a>
-                        <p class="value-statement">SIEM & threat detection</p>
-                    </div>
-                </div>
-
-                <!-- Main Content Area -->
-                <div class="main-content">
-                    <!-- Applications Layer -->
-                    <div class="layer">
-                        <div class="layer-header applications">Applications</div>
-                        <div class="layer-content">
-                            <div class="tech-box status-opportunity">
-                                <a href="https://www.ibm.com/products/supply-chain-business-network" target="_blank"><strong>IBM Sterling</strong></a>
-                                <p class="value-statement">Supply chain visibility</p>
-                            </div>
-                            <div class="tech-box status-explore">
-                                <a href="https://www.ibm.com/products/maximo" target="_blank"><strong>IBM Maximo</strong></a>
-                                <p class="value-statement">Asset management for parks</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- AI & Analytics Layer -->
-                    <div class="layer">
-                        <div class="layer-header ai">AI & Analytics</div>
-                        <div class="layer-content">
-                            <div class="tech-box status-installed">
-                                <a href="https://www.ibm.com/watsonx" target="_blank"><strong>IBM watsonx.ai</strong></a>
-                                <p class="value-statement">Guest personalization & content generation</p>
-                            </div>
-                            <div class="tech-box status-opportunity">
-                                <a href="https://www.ibm.com/products/watsonx-governance" target="_blank"><strong>watsonx.governance</strong></a>
-                                <p class="value-statement">AI governance framework</p>
-                            </div>
-                            <div class="tech-box status-explore">
-                                <a href="https://www.ibm.com/products/watsonx-data" target="_blank"><strong>watsonx.data</strong></a>
-                                <p class="value-statement">Data lakehouse platform</p>
-                            </div>
-                            <div class="tech-box status-explore">
-                                <a href="https://www.ibm.com/products/cognos-analytics" target="_blank"><strong>IBM Cognos Analytics</strong></a>
-                                <p class="value-statement">Enterprise BI & reporting</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Data & Integration Layer -->
-                    <div class="layer">
-                        <div class="layer-header data">Data & Integration</div>
-                        <div class="layer-content">
-                            <div class="tech-box status-installed">
-                                <a href="https://www.ibm.com/products/datastage" target="_blank"><strong>IBM DataStage</strong></a>
-                                <p class="value-statement">Processing 10TB+ daily</p>
-                            </div>
-                            <div class="tech-box status-installed">
-                                <a href="https://www.ibm.com/products/app-connect" target="_blank"><strong>IBM App Connect</strong></a>
-                                <p class="value-statement">Integrating 200+ applications</p>
-                            </div>
-                            <div class="tech-box status-opportunity">
-                                <a href="https://www.ibm.com/products/api-connect" target="_blank"><strong>IBM API Connect</strong></a>
-                                <p class="value-statement">API management platform</p>
-                            </div>
-                            <div class="tech-box status-explore">
-                                <a href="https://www.ibm.com/products/mq" target="_blank"><strong>IBM MQ</strong></a>
-                                <p class="value-statement">Enterprise messaging</p>
-                            </div>
-                            <div class="tech-box status-explore">
-                                <a href="https://www.ibm.com/products/event-streams" target="_blank"><strong>IBM Event Streams</strong></a>
-                                <p class="value-statement">Kafka-based streaming</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Platform & Container Layer -->
-                    <div class="layer">
-                        <div class="layer-header openshift">Platform & Containers</div>
-                        <div class="layer-content">
-                            <div class="tech-box status-installed">
-                                <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift" target="_blank"><strong>Red Hat OpenShift</strong></a>
-                                <p class="value-statement">Running 500+ containers for Disney+</p>
-                            </div>
-                            <div class="tech-box status-opportunity">
-                                <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-ai" target="_blank"><strong>OpenShift AI</strong></a>
-                                <p class="value-statement">MLOps platform</p>
-                            </div>
-                            <div class="tech-box status-installed">
-                                <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux" target="_blank"><strong>Red Hat Enterprise Linux</strong></a>
-                                <p class="value-statement">Standard OS platform</p>
-                            </div>
-                            <div class="tech-box status-explore">
-                                <a href="https://www.redhat.com/en/technologies/management/ansible" target="_blank"><strong>Red Hat Ansible Automation</strong></a>
-                                <p class="value-statement">Infrastructure automation</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Infrastructure Layer -->
-                    <div class="layer">
-                        <div class="layer-header infrastructure">Infrastructure</div>
-                        <div class="layer-content">
-                            <div class="tech-box status-installed">
-                                <a href="https://www.ibm.com/power" target="_blank"><strong>IBM Power Systems</strong></a>
-                                <p class="value-statement">SAP HANA with 99.999% uptime</p>
-                            </div>
-                            <div class="tech-box status-installed">
-                                <a href="https://www.ibm.com/z" target="_blank"><strong>IBM Z Mainframe</strong></a>
-                                <p class="value-statement">1B+ transactions daily</p>
-                            </div>
-                            <div class="tech-box status-installed">
-                                <a href="https://www.ibm.com/products/flashsystem" target="_blank"><strong>IBM FlashSystem</strong></a>
-                                <p class="value-statement">5PB+ media storage</p>
-                            </div>
-                            <div class="tech-box status-opportunity">
-                                <a href="https://www.ibm.com/products/storage-fusion" target="_blank"><strong>IBM Storage Fusion</strong></a>
-                                <p class="value-statement">Container-native storage</p>
-                            </div>
-                            <div class="tech-box status-explore">
-                                <a href="https://www.ibm.com/cloud/power-virtual-server" target="_blank"><strong>IBM Power Virtual Server</strong></a>
-                                <p class="value-statement">Cloud-based Power workloads</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Sidebar: Automation & Observability -->
-                <div class="sidebar-right">
-                    <div class="layer-header automation">Automation & AIOps</div>
-                    <div class="tech-box status-opportunity">
-                        <a href="https://www.ibm.com/products/instana" target="_blank"><strong>IBM Instana</strong></a>
-                        <p class="value-statement">APM for OpenShift</p>
-                    </div>
-                    <div class="tech-box status-explore">
-                        <a href="https://www.ibm.com/products/turbonomic" target="_blank"><strong>IBM Turbonomic</strong></a>
-                        <p class="value-statement">Application resource management</p>
-                    </div>
-                    <div class="tech-box status-explore">
-                        <a href="https://www.ibm.com/products/cloud-pak-for-watson-aiops" target="_blank"><strong>IBM Cloud Pak for AIOps</strong></a>
-                        <p class="value-statement">AI-powered IT operations</p>
-                    </div>
-                    
-                    <div class="layer-header network" style="margin-top: 20px;">Network & Edge</div>
-                    <div class="tech-box status-explore">
-                        <a href="https://www.ibm.com/products/ns1-connect" target="_blank"><strong>IBM NS1</strong></a>
-                        <p class="value-statement">DNS & traffic management</p>
-                    </div>
-                    <div class="tech-box status-explore">
-                        <a href="https://www.ibm.com/products/edge-application-manager" target="_blank"><strong>IBM Edge Application Manager</strong></a>
-                        <p class="value-statement">Edge computing for parks</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <p>IBM Book of Business - Disney Enterprise Architecture | Confidential</p>
-        </footer>
     </div>
-
-    <script src="js/enterprise-matrices.js"></script>
+    
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-box installed"></div>
+            <span>Installed Base</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-box opportunity"></div>
+            <span>Opportunity</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-box explore"></div>
+            <span>Explore</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-box at-risk"></div>
+            <span>No Interest/At Risk</span>
+        </div>
+    </div>
+    
+    <div class="matrix">
+        <!-- Security Column -->
+        <div>
+            <div class="category">Security</div>
+            <div class="product neutral">Guardium Data Encryption</div>
+            <div class="product neutral">Guardium Data Protection</div>
+            <div class="product neutral">Guardium Security Center</div>
+            <div class="product neutral">Guardium Discover</div>
+            <div class="product installed">Guardium Key Lifecycle</div>
+            <div class="product neutral">Security Verify (IAM)</div>
+            <div class="product neutral">Trusteer (Fraud)</div>
+            <div class="product neutral">Security MaaS 360</div>
+            <div class="product neutral">ILMT</div>
+            <div class="product neutral">HashiCorp Boundary</div>
+            <div class="product installed">HashiCorp Vault</div>
+            <div class="product installed">HashiCorp Consul</div>
+        </div>
+        
+        <!-- Client Applications -->
+        <div>
+            <div class="category">Client Applications</div>
+            <div class="product neutral">ERP</div>
+            <div class="product neutral">Fraud</div>
+            <div class="product neutral">CRM</div>
+            <div class="product neutral">Credit</div>
+            <div class="product neutral">B2B</div>
+            <div class="product neutral">PCP</div>
+            <div class="product neutral">B2C</div>
+            <div class="product neutral">Supply Chain</div>
+            <div class="product neutral">B2E</div>
+            <div class="product neutral">Engineering/Network</div>
+            <div class="product neutral">Omnichannel</div>
+            <div class="product neutral">Portal/Mobile/APP</div>
+            <div class="product neutral">CRM</div>
+            <div class="product neutral">Payment Instantaneous</div>
+            <div class="product neutral">IA</div>
+            <div class="product neutral">Customer service</div>
+        </div>
+        
+        <!-- AI Assistants -->
+        <div>
+            <div class="category">AI Assistants</div>
+            <div class="product explore">watsonx Assistants</div>
+            <div class="product explore">watsonx Orchestration</div>
+            <div class="product explore">watsonx Code Assistant</div>
+            <div class="product installed">watsonx BI Asst</div>
+            <div class="product installed">Cognos Analytics</div>
+            <div class="product installed">Planning Analytics</div>
+            <div class="product installed">SPSS Modeler</div>
+            <div class="product neutral">Process Mining</div>
+            <div class="product neutral">Business Analytics</div>
+            <div class="product installed">BlueWorks Live</div>
+            <div class="product explore">watsonx Code Assistant</div>
+            <div class="product neutral">Automation</div>
+            <div class="product neutral">CP4BA</div>
+            <div class="product neutral">Decision Mgmt</div>
+            <div class="product neutral">RPA</div>
+            <div class="product neutral">Workflow Automation</div>
+        </div>
+        
+        <!-- AI/MLOps -->
+        <div>
+            <div class="category">AI/MLOps</div>
+            <div class="product explore">watsonx.govern</div>
+            <div class="product explore">watsonx.ai</div>
+            <div class="product neutral">OpenPages</div>
+            <div class="product neutral">CP4D</div>
+            <div class="product neutral">WCA Ansible & Java</div>
+            <div class="product neutral">WCAx</div>
+            <div class="product neutral">Orchestrate (SaaS)</div>
+        </div>
+        
+        <!-- Databases -->
+        <div>
+            <div class="category">Databases</div>
+            <div class="product installed">watsonx.data</div>
+            <div class="product installed">DB2</div>
+            <div class="product neutral">CMDB</div>
+            <div class="product neutral">CMOD</div>
+            <div class="product neutral">Capture</div>
+            <div class="product neutral">Database Eco</div>
+            <div class="product neutral">Cloudera</div>
+            <div class="product neutral">Hadoop</div>
+            <div class="product neutral">Netezza</div>
+            <div class="product neutral">CP4D</div>
+            <div class="product neutral">Informix</div>
+            <div class="product neutral">watsonx.ai (SaaS)</div>
+            <div class="product neutral">FileNet</div>
+            <div class="product neutral">Content</div>
+        </div>
+        
+        <!-- Data Intelligence -->
+        <div>
+            <div class="category">Data Intelligence</div>
+            <div class="product neutral">Data Product Hub</div>
+            <div class="product neutral">Knowledge Catalog</div>
+            <div class="product neutral">Manta Data Lineage</div>
+            <div class="product neutral">CP4D</div>
+            <div class="product neutral">CPLEX</div>
+            <div class="product installed">Optim & Master Data Mgmt</div>
+            <div class="product neutral">SPSS Stats</div>
+        </div>
+        
+        <!-- Data Integration -->
+        <div>
+            <div class="category">Data Integration</div>
+            <div class="product opportunity">DataStage</div>
+            <div class="product neutral">StreamSets</div>
+            <div class="product neutral">Databend</div>
+            <div class="product neutral">CP4D</div>
+            <div class="product neutral">Data Fabric</div>
+            <div class="product neutral">Data Integration</div>
+            <div class="product neutral">Replication</div>
+        </div>
+        
+        <!-- Asset Lifecycle Management -->
+        <div>
+            <div class="category purple">Asset Lifecycle</div>
+            <div class="product installed">Maximo</div>
+            <div class="product installed">Envizi</div>
+            <div class="product neutral">EI</div>
+            <div class="product installed">TRIRIGA</div>
+            <div class="product neutral">Supply Chain</div>
+            <div class="product installed">Sterling Order & Inventory Mgmt</div>
+            <div class="product neutral">HashiCorp Terraform</div>
+        </div>
+        
+        <!-- IT Automation & FinOps -->
+        <div>
+            <div class="category purple">IT Automation & FinOps</div>
+            <div class="product installed">Instana</div>
+            <div class="product installed">Turbonomic</div>
+            <div class="product installed">Apptio</div>
+            <div class="product neutral">Operations Insights</div>
+            <div class="product installed">Cloud Pak for AIOps</div>
+            <div class="product neutral">Concert</div>
+            <div class="product neutral">HashiCorp Terraform</div>
+            <div class="product installed">Cloudability</div>
+            <div class="product neutral">Flexera One</div>
+            <div class="product neutral">Targetprocess</div>
+            <div class="product neutral">Workload Automation</div>
+            <div class="product neutral">Ansible</div>
+        </div>
+    </div>
+    
+    <div class="matrix" style="margin-top: 6px;">
+        <!-- Application Development -->
+        <div>
+            <div class="category purple">Application Development</div>
+            <div class="product neutral">UrbanCode</div>
+            <div class="product neutral">CP4Apps</div>
+            <div class="product neutral">CP4Systems</div>
+            <div class="product neutral">WAS</div>
+            <div class="product neutral">DevOps</div>
+            <div class="product neutral">Spectrum LSF</div>
+            <div class="product neutral">Web Hybrid Ed</div>
+            <div class="product neutral">App Run</div>
+            <div class="product neutral">Runtimes</div>
+            <div class="product neutral">Project Harmony</div>
+            <div class="product neutral">WCA Java</div>
+            <div class="product neutral">ELM</div>
+        </div>
+        
+        <!-- Application Integration -->
+        <div>
+            <div class="category purple">Application Integration</div>
+            <div class="product installed">MQ</div>
+            <div class="product neutral">DataPower Operational Dashboard</div>
+            <div class="product neutral">DataPower</div>
+            <div class="product installed">WebM</div>
+            <div class="product neutral">API Connect</div>
+            <div class="product installed">Aspera</div>
+            <div class="product neutral">Connect:Direct</div>
+            <div class="product neutral">CP4I</div>
+            <div class="product neutral">APP Connect</div>
+            <div class="product installed">Sterling B2B Integrator</div>
+            <div class="product neutral">Event Automation</div>
+            <div class="product neutral">FTM</div>
+        </div>
+        
+        <!-- Network Mgmt -->
+        <div>
+            <div class="category purple">Network Mgmt</div>
+            <div class="product installed">Content Delivery Network</div>
+            <div class="product installed">NS1 Connect</div>
+            <div class="product neutral">Cloud Network Security</div>
+            <div class="product neutral">Hybrid Cloud Mesh</div>
+            <div class="product neutral">CP4NA</div>
+            <div class="product neutral">SevOne</div>
+            <div class="product neutral">Edge Application Manager</div>
+            <div class="product neutral">HashiCorp Nomad</div>
+        </div>
+        
+        <!-- Red Hat OpenShift -->
+        <div style="grid-column: span 2;">
+            <div class="category red">Red Hat OpenShift</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                <div class="product opportunity">OpenShift Container Platform</div>
+                <div class="product neutral">Advanced Cluster Management</div>
+                <div class="product neutral">OpenShift Virtualization</div>
+                <div class="product neutral">OpenShift Data Foundation</div>
+            </div>
+        </div>
+        
+        <!-- Enterprise Storage -->
+        <div>
+            <div class="category dark">Enterprise Storage</div>
+            <div class="product neutral">DS8000 Series</div>
+            <div class="product neutral">Tape (Hydra & Jaguar)/VTS</div>
+            <div class="product neutral">SAN Directors</div>
+        </div>
+        
+        <!-- Data Resilience Storage -->
+        <div>
+            <div class="category dark">Data Resilience Storage</div>
+            <div class="product neutral">Flash</div>
+            <div class="product neutral">SVC</div>
+            <div class="product neutral">Storage Virtualize</div>
+            <div class="product neutral">Tape</div>
+            <div class="product installed">Storage Insight/Control</div>
+            <div class="product installed">Defender/Protect</div>
+        </div>
+        
+        <!-- Data Resilience Storage 2 -->
+        <div>
+            <div class="category dark">Data Resilience Storage</div>
+            <div class="product neutral">Scale</div>
+            <div class="product neutral">System</div>
+            <div class="product neutral">Ceph</div>
+            <div class="product neutral">Ceph System</div>
+            <div class="product neutral">Fusion</div>
+            <div class="product neutral">Fusion HCI</div>
+            <div class="product neutral">COS</div>
+            <div class="product neutral">HyperScaler (+Physical Tape)</div>
+            <div class="product neutral">Fusion HCI</div>
+        </div>
+        
+        <!-- Power & Z System & Cloud -->
+        <div style="grid-column: span 2;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
+                <div>
+                    <div class="category dark">Power</div>
+                    <div class="product neutral">P9 E950, P7</div>
+                    <div class="product neutral">RHEL</div>
+                    <div class="product neutral">AIX</div>
+                    <div class="product neutral">SAP</div>
+                    <div class="product neutral">Linux</div>
+                    <div class="product neutral">IBM i</div>
+                </div>
+                <div>
+                    <div class="category dark">Z System</div>
+                    <div class="product neutral">Z Software</div>
+                    <div class="product neutral">AI on Z</div>
+                    <div class="product neutral">IBM pOq</div>
+                    <div class="product neutral">IBM LinuxONE</div>
+                    <div class="product neutral">Z Monitoring Suite</div>
+                    <div class="product neutral">Z Security</div>
+                </div>
+                <div>
+                    <div class="category dark">Cloud</div>
+                    <div class="product neutral">IaaS</div>
+                    <div class="product neutral">ROKS (MAS)</div>
+                    <div class="product neutral">Power Virtual Server</div>
+                    <div class="product neutral">SAP</div>
+                    <div class="product neutral">Cloud Financial Server</div>
+                    <div class="product neutral">Cloud Satellite</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px;">
+        <div style="background: linear-gradient(135deg, #0f62fe 0%, #0353e9 100%); color: white; padding: 6px; text-align: center; font-weight: 600; border-radius: 3px; font-size: 10px;">
+            IBM Technology Lifecycle Services (TLS)
+        </div>
+        <div style="background: linear-gradient(135deg, #24a148 0%, #198038 100%); color: white; padding: 6px; text-align: center; font-weight: 600; border-radius: 3px; font-size: 10px;">
+            IBM Expert Labs (EL)
+        </div>
+    </div>
 </body>
 </html>
